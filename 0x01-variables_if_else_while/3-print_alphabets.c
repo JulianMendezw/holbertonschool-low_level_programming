@@ -15,10 +15,10 @@ for (c = 'a' ; c <= 'z' ; c++)
 {
 putchar(c);
 }
-for (d = 'A' ; a <= 'Z' ; d++)
+for (d = 'A' ; d <= 'Z' ; d++)
 {
-putchar(d)
-putchar('\n');
+putchar(d);
 }
+putchar('\n');
 return (0);
 }
