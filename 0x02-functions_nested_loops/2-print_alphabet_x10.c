@@ -17,7 +17,7 @@ _putchar(a);
 _putchar('\n');
 }
 /**
- *print_alphabet_x10 - Entry point.
+ *print_alphabet_x10 - Entry point hajshaj.
  *
  *Return: Always 0 (Success)
  *
