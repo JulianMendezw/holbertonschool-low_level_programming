@@ -1,8 +1,11 @@
 #include "holberton.h"
 
-/*
-*this a print of holberton
-*/
+/**
+ *main - Entry point
+ *
+ *Return: Always 0 (Success)
+ *
+ */
 
 int main(void)
 {
