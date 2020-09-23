@@ -12,6 +12,22 @@ void times_table(void)
     for (n1 = 0; n1 < 10; n1++)
     {
         for (n2 = 0; n2 < 10; n2++)
+        {
+            m1 = n1 * n2;
+
+            if ( m1 < 10)
+            {
+                _putchar(',');
+                _putchar(' ');
+            }
+            else
+            {
+                /* code */
+            }
+            
+        
+        }
+        
 
     _putchar('\n');
     }
