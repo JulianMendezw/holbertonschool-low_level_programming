@@ -2,22 +2,18 @@
 #include <stdio.h>
 
 /**
- * swap_int - addresses of variables
- *@a: value of var a
- *@b: value of var b
+ * _strlen - counting the length of a string
+ *@s: value waited from the main.c
+ *
  * Return: Always 0.
  */
 
 
 int _strlen(char *s)
 {
-	int i;
+	int largo = 0;
 
-	for(i = 0; s[i] != '\0'; ++i)
-	{
-		printf("%d", i);
-		s = i;
-	}
-	
-	return(i);
+	while (s[largo] != '\0')
+	largo++;
+	return (largo);
 }
