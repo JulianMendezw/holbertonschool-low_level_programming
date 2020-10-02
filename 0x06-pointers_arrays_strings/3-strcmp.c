@@ -9,11 +9,18 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int c;
+	int c, x;
 
 	for (c = 0; s1[c] != '\0' && s2[c] != '\0'; c++)
 	{
-		return (s1[c] - s2[c]);
+		if (s1[c] == s2[c])
+		{
+			x = 0;
+		}
+		else
+		{
+			return (s1[c] - s2[c]);
+		}
 	}
 	return (0);
 }
