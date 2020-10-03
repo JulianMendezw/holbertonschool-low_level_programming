@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * _strlen - counting the length of a string
+ * rot13 - counting the length of a string
  *@s: value waited from the main.c
  *
  * Return: Always 0.
@@ -20,10 +20,9 @@ char *rot13(char *s)
 			if (s[i] == l[x])
 			{
 				s[i] = a[x];
-				break;	
+				break;
 			}
 		}
-		
 	}
 	return (s);
 }
