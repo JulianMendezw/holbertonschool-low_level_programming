@@ -2,21 +2,21 @@
 #include <unistd.h>
 
 /**
- * main - Entry point
- *
+ * _putchar - Function to print char
+ *_printf - counting the string
+ *@c: character
+ *@s: string waited
  * Return: Always 0 (Success)
  */
 
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
-	
 }
 
 void _printf(char *s)
 {
 	int i;
-       
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -30,5 +30,4 @@ int main(void)
 
 	_printf(s);
 	return (1);
-	
 }
