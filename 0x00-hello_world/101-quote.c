@@ -3,9 +3,7 @@
 
 /**
  * _putchar - Function to print char
- *_printf - counting the string
  *@c: character
- *@s: string waited
  * Return: Always 0 (Success)
  */
 
@@ -13,6 +11,11 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * _printf - counting the string
+ *@s: string waited
+ */
 
 void _printf(char *s)
 {
@@ -23,6 +26,11 @@ void _printf(char *s)
 		_putchar(s[i]);
 	}
 }
+
+/**
+ * main - program
+ * Return: Always 0 (Success)
+ */
 
 int main(void)
 {
