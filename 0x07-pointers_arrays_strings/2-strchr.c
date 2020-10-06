@@ -5,7 +5,7 @@
  * @s: the address of memory to print
  * @c: the size of the memory to print
  *
- * Return: Nothing.
+ * Return: always return 0.
  */
 
 char *_strchr(char *s, char c)
@@ -15,5 +15,5 @@ char *_strchr(char *s, char c)
 		if (*s == c)
 		return (s);
 	}
-	return (0);
+	return ('\0');
 }
