@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <ctype.h>
 /**
  * main - program to call arguments from command pront
  * @argc: counting number of arguments
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	{
 		for (j = 0; argv[i][j] != 0; j++)
 		{
-			if (argv[i][j] < 48 || argv[i][j] > 57)
+			if (!(isdigit(argv[i][j])))
 			{
 				printf("Error\n");
 				return (1);
