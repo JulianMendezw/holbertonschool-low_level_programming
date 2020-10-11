@@ -11,16 +11,16 @@ int main(int argc, char *argv[])
 {
 	int n1 = 0, n2 = 0, result = 0;
 
-	if (argc > 1 && argc <=2)
-	{
-		n1 = atoi(argv[1]);
-		n2 = atoi(argv[2]);
-		result = (n1 * n2);
-		printf("%d\n", result);
-	}
-	else
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[2]);
+	if (arg != 3)
 	{
 		printf("Error\n");
 		return (1);
+	}
+	else
+	{
+		result = (n1 * n2);
+		printf("%d\n", result);
 	}
 }
