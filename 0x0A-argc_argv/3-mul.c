@@ -7,6 +7,7 @@
  * @argv: every argument comming from command pront
  * Return: always return 0.
  */
+
 int main(int argc, char *argv[])
 {
 	int n1 = 0, n2 = 0, result = 0;
