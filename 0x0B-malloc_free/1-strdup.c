@@ -17,21 +17,25 @@
 
 char *_strdup(char *str)
 {
-	int i, len;
-	char *array;
+	char *copy;
+	int index, len = 0;
 
 	if (str == NULL)
 		return (NULL);
-	for (i = 0; str[i]; i++)
-		len++;
-	array = malloc(sizeof(char) * (len + 1));
 
-	if (array == NULL)
+	for (index = 0; str[index]; index++)
+		len++;
+
+	copy = malloc(sizeof(char) * (len + 1));
+
+	if (copy == NULL)
 		return (NULL);
 
-	for (i = 0; str[i]; i++)
-		array[i] = str[i];
-	array[len] = '\0';
+	for (index = 0; str[index]; index++)
+		copy[index] = str[index];
 
-	return (array);
+	copy[len] = '\0';
+
+	return (copy);
+	
 }
