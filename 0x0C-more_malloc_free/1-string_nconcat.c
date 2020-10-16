@@ -10,9 +10,9 @@
 /**
  * string_nconcat - A function that concatenates two strings.
  *
- *@s1: Value unsigned received from main
- *@s2: as
- *@n: asa
+ *@s1: string to concatenate
+ *@s2: string to concatenate
+ *@n:  number of bytes to be taken for string 2
  * Return: EXIT_SUCCESS or EXIT_FAILURE
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
