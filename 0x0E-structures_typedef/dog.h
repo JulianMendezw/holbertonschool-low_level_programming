@@ -2,12 +2,11 @@
 #define __DOG_H__
 
 /**
- * struct my_struct - Short description
- * @a: First member
- * @b: Second member
- * @c: Third member
+ * struct dog - Define a new type struct dog
+ * @name: Dog´s name
+ * @age: Dos's age
+ * @owner: Owner name
  *
- * Description: Longer description
  */
 
 struct dog
