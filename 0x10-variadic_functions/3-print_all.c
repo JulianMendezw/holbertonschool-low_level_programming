@@ -17,17 +17,12 @@
 void print_all(const char * const format, ...)
 {
 	va_list(anything);
-	int j = 0, i;
+	int j, i;
 	double f;
 	char *s;
 
 	va_start(anything, format);
-	while (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
-	
+	j = 0;
 	while (format[j] && format)
 	{
 		switch (format[j])
