@@ -12,7 +12,6 @@
  *  print_strings - A function that prints strings, followed by a new line.
  *@n: is the number of strings passed to the function
  *@separator: Is the string to be printed between numbers.
- * Return: alwasy the sum of the arguments.
  */
 
 void print_strings(const char *separator, const unsigned int n, ...)
