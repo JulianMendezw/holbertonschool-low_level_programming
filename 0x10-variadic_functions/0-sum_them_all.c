@@ -13,7 +13,7 @@
  *
  *@n: number of parameters to sum.
  *
- * Return: alwasy the sum of the arguments.
+ * Return: return int.
  */
 int sum_them_all(const unsigned int n, ...)
 {
