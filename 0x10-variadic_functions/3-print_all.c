@@ -21,13 +21,9 @@ void print_all(const char * const format, ...)
 	char *s;
 
 	va_start(anything, format);
-	while (format == NULL)
-	{
-		printf("\n");
-		return;
-	}
+
 	j = 0;
-	while (format[j] && (format))
+	while (format && format[j])
 	{
 		switch (format[j])
 		{
