@@ -18,18 +18,18 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int i;
-	int sum_r = 0, value;
+	int sum_r = 0;
+
+	va_list(parameters);
 
 	if (!n)
 		return (0);
 
-	va_list(parameters);
 	va_start(parameters, n);
 
 	for (i = 0; i < n; i++)
 	{
-		value = va_arg(parameters, int);
-		sum_r += value;
+		sum_r += va_arg(parameters, int);
 	}
 	va_end(parameters);
 	return (sum_r);
