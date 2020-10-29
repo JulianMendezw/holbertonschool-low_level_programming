@@ -1,7 +1,7 @@
 ## Singly linked lists
 
 ## Description
-This is a project about how to use ** Singly linked lists**, a linked list is a linear data structure, in which the elements are not stored at contiguous memory locations.
+This is a project about how to use **Singly linked lists**, a linked list is a linear data structure, in which the elements are not stored at contiguous memory locations.
 
 ## Learning Objectives
 
