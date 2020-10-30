@@ -9,7 +9,7 @@
 
 /**
  * print_list - A function that prints all the elements of a list_t list.
- *@h: nodo to print.
+ *@h: node to print.
  *
  * Return: the number of nodes.
  */
@@ -17,8 +17,9 @@
 size_t print_list(const list_t *h)
 {
 	size_t nodes;
+	const list_t *temp = h;
 
-	for (nodes = 1; nodes > 0; nodes++)
+	for (nodes = 0; temp != NULL; nodes++)
 	{
 		if (h->str == NULL)
 			printf("[0] (nil)\n");
@@ -26,10 +27,7 @@ size_t print_list(const list_t *h)
 		{
 			printf("[%d] %s\n", h->len, h->str);
 		}
-		if (h->next != NULL)
-			h = h->next;
-		else
-			break;
+			temp = temp->next;
 	}
 	return (nodes);
 }
