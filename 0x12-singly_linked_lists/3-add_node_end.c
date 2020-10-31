@@ -19,38 +19,32 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *newn, tmp = *head;
+	list_t *newn, *tmp = *head;
+	int i;
 
 	newn = malloc(sizeof(list_t));
 	if (!newn)
 		return (NULL);
 
+	for (i = 0; str[i]; i++)
+	;
+
 	newn->str = strdup(str);
-	newn->len = _strlen(str);
+	newn->len = i;
 	newn->next = NULL;
 
-	if (head == NULL)
-		head = newn;
-
-	while (tmp->next != NULL)
+	if (*head == NULL)
+	{
+		*head = newn;
+	}
+	else
+	{
+		tmp  = *head;
+		while (tmp->next != NULL)
 	{
 		tmp = tmp->next;
 	}
 	tmp->next = newn;
-
+	}
 	return (newn);
-
-/**
- * _strlen - A function that count a string.
- *@str: String to count.
- * Return: an integer.
- */
-
-int _strlen(const char *str)
-{
-	int i;
-
-	for (i = 0; str[i]; i++)
-	;
-	return (i);
 }
