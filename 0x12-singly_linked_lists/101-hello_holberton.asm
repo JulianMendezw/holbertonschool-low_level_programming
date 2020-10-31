@@ -1,18 +1,24 @@
-global _start
+/* Attempting to output loop counter with printf*/
 
-section .text
+.global main
+.func main
 
-_start:
-  mov rax, 1        ; write(
-  mov rdi, 1        ;   STDOUT_FILENO,
-  mov rsi, msg      ;   "Hello, Holberton\n",
-  mov rdx, msglen   ;   sizeof("Hello, Holberton\n")
-  syscall           ; );
+main:
+    PUSH {LR}
+    LDR R0, =string
+    MOV R1, #0x5                      @ iterations counter
+    BAL _loop
 
-  mov rax, 60       ; exit(
-  mov rdi, 0        ;   EXIT_SUCCESS
-  syscall           ; );
+_loop:
+    SUBS R1, #0x1                    @ decrement, set flags
+    BL printf                                 @ call to the function
+    BEQ _exit                              @ if R1 == 0, exit
+    BNE _loop                             @ else, re-loop
 
-section .rodata
-  msg: db "Hello, Holberton\n", 10
-  msglen: equ $ - msg
+_exit:
+    POP {PC}
+    MOV PC, LR
+
+.data
+string:
+    .asciz "%d\n"
