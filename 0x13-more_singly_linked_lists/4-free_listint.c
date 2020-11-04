@@ -10,7 +10,6 @@
  * free_listint -a function that frees a listint_t list.
  * @head: Node to free.
  *
- * Return: nothing.
  */
 
 void free_listint(listint_t *head)
