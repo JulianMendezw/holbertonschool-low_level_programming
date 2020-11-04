@@ -10,7 +10,7 @@
 
 /**
  * listint_len - A function that returns the number
- * 				of elements in a linked listint_t list.
+ *				of elements in a linked listint_t list.
  *@h: Head of node.
  *
  * Return: the number of nodes of the listint_t.
