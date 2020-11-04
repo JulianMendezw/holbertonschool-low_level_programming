@@ -1,5 +1,5 @@
 /*
- * File: 4-free_list.c
+ * File: 5-free_listint2.c
  * Auth: Julian Mendez w
  */
 
@@ -26,4 +26,5 @@ void free_listint2(listint_t **head)
 		free(current);
 	}
 	head = NULL;
+	free(head);
 }
