@@ -7,8 +7,8 @@
 #include <stdlib.h>
 
 /**
- * insert_nodeint_at_index - a function that returns the sum of all the data
- *				(n) of a listint_t linked list.
+ * insert_nodeint_at_index -  a function that inserts a new node
+ *							at a given position.
  * @head: Pointer to the first node.
  * @idx: is the index of the list where the new node should be added.
  * @n: data to set in a new node.
