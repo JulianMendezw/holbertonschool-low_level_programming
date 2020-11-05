@@ -1,13 +1,7 @@
 
 # 0x14. C - Bit manipulation
 
-Foundations - Low-level programming & Algorithm ― Hatching out
-
-_by Julien Barbier, co-founder & CEO at Holberton School_
-
-Ongoing project - started 11-05-2020, must end by 11-06-2020 (in about 9 hours) - you're done with  0% of tasks.
-
-Checker was released at 11-05-2020 12:00 PM
+Bit manipulation is the act of algorithmically manipulating bits or other pieces of data shorter than a byte. C language is very efficient in manipulating bits.
 
 **Manual QA review must be done**  (request it when you are done with the project)
 
