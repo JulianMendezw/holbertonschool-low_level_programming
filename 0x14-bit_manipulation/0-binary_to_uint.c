@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <string.h>
 
+unsigned int _strlen(const char *b);
+
 /**
  * binary_to_uint -  a function that converts a binary number to
  *					an unsigned int.
@@ -20,7 +22,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i, n, x, j, sum = 0, sum1 = 0, ld = 0;
 
-	n = strlen(b);
+	n = _strlen(b);
 
 	if (n <= 1 && b[0] == '1')
 		return (1);
@@ -52,4 +54,20 @@ unsigned int binary_to_uint(const char *b)
 	}
 	sum = sum + ld;
 	return (sum);
+}
+
+
+/**
+ * _strlen - count a string.
+ * @b: String to count.
+ *
+ * Return: leng of string.
+ */
+unsigned int _strlen(const char *b)
+{
+	unsigned int i;
+
+	for (i = 0; b[i]; i++)
+	;
+	return (i);
 }
