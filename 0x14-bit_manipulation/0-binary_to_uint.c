@@ -9,6 +9,7 @@
 #include <string.h>
 
 unsigned int _strlen(const char *b);
+unsigned int super_power(unsigned int n, unsigned int i);
 
 /**
  * binary_to_uint -  a function that converts a binary number to
@@ -20,39 +21,23 @@ unsigned int _strlen(const char *b);
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int i, n, x, j, sum = 0, sum1 = 0, ld = 0;
+	unsigned int i, n, sum = 0;
+
+
+	if (b == NULL)
+	return (0);
 
 	n = _strlen(b);
 
-	if (n <= 1 && b[0] == '1')
-		return (1);
-	else if (n <= 1 && b[0] == '0')
-		return (0);
-
-	if (b[n - 1] == '1')
-		ld = 1;
-
-	for (i = 0; b[i]; i++)
+	for (i = 1; i <= n ; i++)
 	{
-		if (b[i] != '0' && b[i] != '1')
+		if (b[i - 1] != '0' && b[i - 1] != '1')
 			return (0);
 
-		if (b[i] == '1')
-		{
-			x = 1;
-			for (j = 0; j < (n - 1); j++)
-			{
-				x = (x * 2);
-				sum1 = x;
-			}
-		}
-		else if (b[i] == '0')
-			sum1 = 0;
-
-		sum += sum1;
-		n = n - 1;
+		if (b[i - 1] == '1')
+			sum = sum + super_power(2, (n - i));
 	}
-	sum = sum + ld;
+
 	return (sum);
 }
 
@@ -70,4 +55,23 @@ unsigned int _strlen(const char *b)
 	for (i = 0; b[i]; i++)
 	;
 	return (i);
+}
+
+/**
+ * super_power - count a string.
+ * @n: Number.
+ *@i: Number.
+ *
+ * Return: leng of string.
+ */
+
+unsigned int super_power(unsigned int n, unsigned int i)
+{
+	unsigned int x = 1;
+
+	for (; i > 0; i--)
+	{
+		x = x * n;
+	}
+	return (x);
 }
