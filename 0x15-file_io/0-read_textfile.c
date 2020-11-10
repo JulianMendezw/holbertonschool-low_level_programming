@@ -34,7 +34,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (fd == -1)
 			return (0);
 
-	file = calloc(sizeof(char) * letters);
+	file = malloc(sizeof(char) * letters);
 		if (!file)
 			return (0);
 
