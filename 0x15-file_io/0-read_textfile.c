@@ -48,5 +48,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	w = write(STDOUT_FILENO, file, sz);
 
 	close(fd);
+	fd = strlen(file);
+
 	return (w);
 }
