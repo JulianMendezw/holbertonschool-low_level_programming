@@ -23,7 +23,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
+	int fd, i;
 
 	if (!filename)
 		return (-1);
@@ -32,8 +32,14 @@ int create_file(const char *filename, char *text_content)
 		if (fd == -1)
 			return (-1);
 
-	if (write(STDIN_FILENO, &text_content, sizeof(text_content)) < 0)
-		return (-1);
+	for (i = 0; text_content[i]; i++)
+	;
+
+	if (text_content)
+	{
+		if (write(fd, text_content, i) < 0)
+			return (-1);
+	}
 
 	close(fd);
 	return (1);
