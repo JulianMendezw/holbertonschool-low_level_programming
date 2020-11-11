@@ -66,11 +66,7 @@ int copy_file(char *file_from, char *file_to)
 
 	f_from = open(file_from, O_RDONLY);
 		if (f_from == -1)
-		{
-			free(text_copy);
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
-		}
+			return (98);
 
 	text_copy = malloc(sizeof(char) * BUF);
 		if (!text_copy)
