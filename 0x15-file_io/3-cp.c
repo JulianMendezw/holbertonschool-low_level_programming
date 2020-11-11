@@ -111,5 +111,5 @@ int copy_file(char *file_from, char *file_to)
 		exit(100);
 	}
 
-	return (0);
+	exit(0);
 }
