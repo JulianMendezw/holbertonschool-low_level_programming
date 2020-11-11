@@ -79,10 +79,12 @@ int copy_file(char *file_from, char *file_to)
 	f_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 			if (f_to == -1)
 				return (99);
-
-	w = write(f_to, text_copy, bytes);
-		if (w == -1)
-			return (99);
+	if (r > 0)
+	{
+		w = write(f_to, text_copy, bytes);
+			if (w == -1)
+				return (99);
+	}
 
 	if (close(f_from) < 0)
 	{
