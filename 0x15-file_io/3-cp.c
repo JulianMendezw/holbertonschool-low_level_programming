@@ -76,7 +76,8 @@ int copy_file(char *file_from, char *file_to)
 		if (r == -1)
 		{
 			free(text_copy);
-			return (98);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
 		}
 
 	f_to = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 00664);
