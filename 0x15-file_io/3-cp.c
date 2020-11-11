@@ -58,7 +58,7 @@ int main(int ac, char **av)
 
 int copy_file(char *file_from, char *file_to)
 {
-	int f_from, f_to, r, w, bytes = 1024;
+	int f_from, f_to, r, w;
 	char *text_copy;
 
 	if (!file_from)
@@ -68,23 +68,35 @@ int copy_file(char *file_from, char *file_to)
 		if (f_from == -1)
 			return (98);
 
-	text_copy = malloc(sizeof(char) * bytes);
+	text_copy = malloc(sizeof(char) * BUF);
 		if (!text_copy)
 			return (98);
 
-	r = read(f_from, text_copy, bytes);
+	r = read(f_from, text_copy, BUF);
 		if (r == -1)
+		{
+			free(text_copy);
 			return (98);
+		}
 
-	f_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	f_to = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 00664);
 			if (f_to == -1)
+			{
+				free(text_copy);
 				return (99);
+			}
+
 	if (r > 0)
 	{
-		w = write(f_to, text_copy, bytes);
+		w = write(f_to, text_copy, BUF);
 			if (w == -1)
+			{
+				free(text_copy);
 				return (99);
+			}
 	}
+
+	free(text_copy);
 
 	if (close(f_from) < 0)
 	{
