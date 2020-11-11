@@ -64,6 +64,9 @@ int copy_file(char *file_from, char *file_to)
 	if (!file_from)
 		return (98);
 
+	if (!file_to)
+		return(99);
+
 	f_from = open(file_from, O_RDONLY);
 		if (f_from == -1)
 			return (98);
