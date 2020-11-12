@@ -71,8 +71,7 @@ int copy_file(char *file_from, char *file_to)
 		if (!text_copy)
 			return (98);
 
-	f_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC,
-				S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	f_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
 		if (f_to == -1)
 		{
