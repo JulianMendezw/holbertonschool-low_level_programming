@@ -57,7 +57,7 @@ int main(int ac, char **av)
 
 int copy_file(char *file_from, char *file_to)
 {
-	int f_from, f_to, r, w;
+	int f_from, f_to, r, w, c;
 	char *text_copy;
 
 	if (!file_from)
@@ -88,8 +88,8 @@ int copy_file(char *file_from, char *file_to)
 
 	while (r != 0)
 	{
-		w = write(f_to, text_copy, BUF);
-			if (w == -1)
+		w = write(f_to, text_copy, r);
+			if (w == -1 || w != r)
 			{
 				free(text_copy);
 				return (99);
@@ -105,7 +105,8 @@ int copy_file(char *file_from, char *file_to)
 
 	free(text_copy);
 
-	if (close(f_from) < 0)
+	c = close(f_from);
+	if (c < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_from);
 		exit(100);
