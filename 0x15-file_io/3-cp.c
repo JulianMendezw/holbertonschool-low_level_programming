@@ -31,7 +31,6 @@ int main(int ac, char **av)
 		exit(97);
 	}
 
-	/* av[1]: file from | av[2] = file to */
 	res = copy_file(av[1], av[2]);
 
 		if (res == 98)
@@ -64,7 +63,7 @@ int copy_file(char *file_from, char *file_to)
 	if (!file_from)
 		return (98);
 
-	f_from = open(file_from, O_RDWR);
+	f_from = open(file_from, O_RDONLY);
 		if (f_from == -1)
 			return (98);
 
@@ -72,22 +71,22 @@ int copy_file(char *file_from, char *file_to)
 		if (!text_copy)
 			return (98);
 
+	f_to = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
+
+		if (f_to == -1)
+		{
+			free(text_copy);
+			return (99);
+		}
+
 	r = read(f_from, text_copy, BUF);
 		if (r == -1)
 		{
 			free(text_copy);
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(98);
+			return (98);
 		}
 
-	f_to = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 00664);
-			if (f_to == -1)
-			{
-				free(text_copy);
-				return (99);
-			}
-
-	if (r > 0)
+	while (r != 0)
 	{
 		w = write(f_to, text_copy, BUF);
 			if (w == -1)
@@ -95,6 +94,13 @@ int copy_file(char *file_from, char *file_to)
 				free(text_copy);
 				return (99);
 			}
+
+		r = read(f_from, text_copy, BUF);
+				if (r == -1)
+				{
+					free(text_copy);
+					return (98);
+				}
 	}
 
 	free(text_copy);
