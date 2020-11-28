@@ -1,35 +1,41 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
- *times_table - Entry point
- *integrer to check
- *Return: Always 0 (Success)
+ * times_table - function that prints the 9 times table, starting with 0.
+ *
  *
  */
+
 void times_table(void)
-{   
-    int n1, n2, m1;
-    for (n1 = 0; n1 < 10; n1++)
-    {
-        for (n2 = 0; n2 < 10; n2++)
-        {
-            m1 = n1 * n2;
+{
+	int i, j, num = 0;
 
-            if ( m1 < 10)
-            {
-                _putchar(',');
-                _putchar(' ');
-            }
-            else
-            {
-                /* code */
-            }
-            
-        
-        }
-        
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 0; j < 10; j++)
+		{
+			num = i * j;
 
-    _putchar('\n');
-    }
-   
+			if (j != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+
+				if (num < 10)
+					_putchar(' ');
+			}
+
+			if (num >= 10)
+			{
+				_putchar(num / 10 + '0');
+				_putchar(num % 10 + '0');
+			}
+			else
+			{
+				_putchar(num + '0');
+			}
+
+		}
+		_putchar('\n');
+	}
 }
