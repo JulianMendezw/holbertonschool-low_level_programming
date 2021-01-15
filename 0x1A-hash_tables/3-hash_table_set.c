@@ -26,7 +26,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		old_node = ht->array[index];
 		while (old_node)
 		{
-			if (old_node->key == key)
+			if (old_node->key == ((char *)key))
 			{
 				old_node->value = ((char *)value);
 				return (1);
