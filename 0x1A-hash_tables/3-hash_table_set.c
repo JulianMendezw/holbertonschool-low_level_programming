@@ -21,6 +21,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (!key || !ht)
 		return (0);
 
+	if (ht->array[index])
+	{
+		old_node = ht->array[index];
+		while (old_node)
+		{
+			if (old_node->key == key)
+			{
+				old_node->value = ((char *)value);
+				return (1);
+			}
+			old_node = old_node->next;
+		}
+	}
+
 	new_node = malloc(sizeof(hash_node_t));
 	if (!new_node)
 		return (0);
