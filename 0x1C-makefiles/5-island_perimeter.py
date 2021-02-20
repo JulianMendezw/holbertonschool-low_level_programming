@@ -9,7 +9,7 @@ def island_perimeter(grid):
     a = 0
 
     try:
-        if len(grid) * len(grid[a]) <= 100:
+        if len(grid) * len(grid[a]) <= 100 and len(grid) != len(grid[a]):
             for line in range(len(grid)):
                 for row in range(len(grid[line])):
 
