@@ -1,7 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 #include "search_algos.h"
+
+/**
+ * print_array - Prints an array between two boundaries
+ * @array: pointer to the first element of the array to print
+ * @min: left boundary
+ * @max: right boundary
+ *
+ * Return: No Return
+ */
+void print_array(int *array, int min, int max)
+{
+	int i;
+
+	for (i = min; i < max; i++)
+		printf("%d, ", array[i]);
+
+	printf("%d\n", array[i]);
+}
 
 /**
  * binary_search - function that searches for a value in a sorted array
@@ -16,34 +33,23 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-	int m, i = 0, index = 0;
-	int _size = (int)size - 1;
+	int min, max, mid;
 
-	if (array == NULL)
+	if (!array)
 		return (-1);
 
-	while (index <= _size)
+	min = 0, max = size - 1;
+	while (min <= max)
 	{
-		i = index;
-		printf("Searching in array:  ");
-		while (i <= ((int)_size))
-		{
-			if (i == ((int)_size))
-				printf("%d", array[i]);
-			else
-				printf("%d, ", array[i]);
-			i++;
-		}
-		printf("\n");
-
-		m = floor((index + _size) / 2);
-
-		if (array[m] < value)
-			index = m + 1;
-		else if (array[m] > value)
-			_size = m - 1;
+		printf("Searching in array: ");
+		print_array(array, min, max);
+		mid = (min + max) / 2;
+		if (array[mid] == value)
+			return (mid);
+		if (array[mid] < value)
+			min = mid + 1;
 		else
-			return (m);
+			max = mid - 1;
 	}
 
 	return (-1);
