@@ -5,7 +5,6 @@
 This project is part of:
 
 ## Foundations
-![](https://camo.githubusercontent.com/85551e9f08cdc868f03c555f49c91dad9ab0b971e4c44418c87c4e6f1dedfdfd/687474703a2f2f7777772e686f6c626572746f6e7363686f6f6c2e636f6d2f686f6c626572746f6e2d6c6f676f2e706e67)
 
 The primary focus of Foundations is to achieve mastery of fundamental engineering concepts and become skilled in coding. Professional Development will be a key supplement of this primary goal. At the conclusion of Foundations, students will have acquired a strong foundation of technical knowledge from which they can either build upon with a Specialization or begin preparing for interviews and jobs as part of Holberton’s interview prep, Career Sprint. For more information, please expand the information in the Overview
 
