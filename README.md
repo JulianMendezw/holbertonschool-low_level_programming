@@ -2,7 +2,6 @@
 <div align="center"><img src="https://i.ibb.co/jLM7TD0/programming-Algorithm.png"></div>
 
 # Low level programming
-This project is part of:
 
 ## Foundations
 
